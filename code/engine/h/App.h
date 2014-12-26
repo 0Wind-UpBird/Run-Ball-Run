@@ -2,7 +2,7 @@
 #define App_h
 #include <SFML\Graphics.hpp>
 
-#include "Cordinador.h"
+#include <Cordinador.h>
 
 class CApp
 {

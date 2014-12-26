@@ -2,7 +2,6 @@
 #define Sprite_h
 #include <SFML\Graphics.hpp>
 
-#include "Colision.h"
 
 class CSprite
 {

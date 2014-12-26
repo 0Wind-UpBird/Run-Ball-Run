@@ -1,8 +1,8 @@
 #ifndef FpsView_h
 #define FpsView_h
 
-#include "App.h"
-#include "Sprite.h"
+#include <App.h>
+#include <Sprite.h>
 #include <cstring>
 
 class CFpsView : public CSprite

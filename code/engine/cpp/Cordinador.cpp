@@ -1,4 +1,4 @@
-#include "Cordinador.h"
+#include <Cordinador.h>
 
 std::vector<CEscenario* > CCordinador::escenarios;
 

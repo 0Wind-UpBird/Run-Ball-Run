@@ -1,5 +1,4 @@
-#include "App.h"
-
+#include <App.h>
 
 sf::RenderWindow* CApp::window;
 float CApp::fps;

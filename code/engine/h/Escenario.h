@@ -5,7 +5,7 @@
 #include <SFML\Graphics.hpp>
 #include <algorithm>
 
-#include "Sprite.h"
+#include <Sprite.h>
 
 class CEscenario
 {

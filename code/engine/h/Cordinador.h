@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <cstring>
-#include "Escenario.h"
+#include <Escenario.h>
 
 class CCordinador
 {

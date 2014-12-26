@@ -1,12 +1,12 @@
 #include <SFML/Graphics.hpp>
-#include "App.h"
+#include <App.h>
 
-#include "Jugador.h"
-#include "ItemsMenu.h"
-#include "Plataformas.h"
+#include "game\escenaJuego\EscenaJuego.h"
+#include "game\escenaJuego\Jugador.h"
+#include "game\escenaJuego\Plataformas.h"
 
-#include "EscenarioMenuPrincipal.h"
-#include "EscenaJuego.h"
+#include "game\escenaMenuPrincipal\EscenarioMenuPrincipal.h"
+#include "game\escenaMenuPrincipal\ItemsMenu.h"
 
 int main()
 {

@@ -1,4 +1,4 @@
-#include "Escenario.h"
+#include <Escenario.h>
 
 CEscenario::CEscenario(){}
 

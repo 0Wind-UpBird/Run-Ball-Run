@@ -1,0 +1,22 @@
+﻿Compilación iniciada a las 26/12/2014 0:03:11.
+     1>Proyecto "C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Run Ball Run\Run Ball Run.vcxproj" en el nodo 2 (Build destinos).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Debug\Run Ball Run.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SFML-2.1-32\lib" "sfml-graphics-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Debug\Run Ball Run.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Debug\Run Ball Run.lib" /MACHINE:X86 Debug\App.obj
+         Debug\Cordinador.obj
+         Debug\Escenario.obj
+         Debug\fpsView.obj
+         Debug\Sprite.obj
+         Debug\EscenaJuego.obj
+         Debug\Jugador.obj
+         Debug\Plataforma.obj
+         Debug\Plataformas.obj
+         Debug\EscenarioMenuPrincipal.obj
+         Debug\ItemsMenu.obj
+         Debug\EscenaSalir.obj
+         Debug\main.obj
+         Run Ball Run.vcxproj -> C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Debug\Run Ball Run.exe
+     1>Compilación del proyecto terminada "C:\Users\Olivetti\Documents\Visual Studio 2012\Projects\Run Ball Run\Run Ball Run\Run Ball Run.vcxproj" (Build destinos).
+
+Build succeeded.
+
+Tiempo transcurrido 00:00:00.54
