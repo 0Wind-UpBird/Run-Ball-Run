@@ -14,7 +14,7 @@ int main()
 	sf::ContextSettings setting;
 	setting.antialiasingLevel = 8;
 
-	sf::RenderWindow win(sf::VideoMode(CApp::W_SCREEN, CApp::H_SCREEN, 32), "Run Ball Run 2", sf::Style::Default, setting);
+	sf::RenderWindow win(sf::VideoMode(tr::CApp::W_SCREEN, tr::CApp::H_SCREEN, 32), "Run Ball Run 2", sf::Style::Default, setting);
 	win.setVerticalSyncEnabled(true);
 
 	//Definimos los sprites:
@@ -31,7 +31,7 @@ int main()
 	escenaJuego.addSprite(&plataformas);
 
 	//Cargamos los Escenarios al Cordinador
-	CCordinador cordinador;
+	tr::CCordinador cordinador;
 
 	cordinador.addEscenario(&menuPrincipal);
 	cordinador.addEscenario(&escenaJuego);
@@ -40,7 +40,7 @@ int main()
 	cordinador.setEscenarioActual(ESCENA_MENU_PRINCIPAL);
 
 	//Le damos al App el cordinador
-	CApp app(&win);
+	tr::CApp app(&win);
 	app.setCordinador(&cordinador);
 
 	//Empezamos el juego

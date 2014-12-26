@@ -6,7 +6,7 @@
 #include <App.h>
 
 enum class tipoHueco {QUIETO, DERECHA_CONTINUO, IZQUIERDA_CONTINUO, PENDULO_DERECHA, PENDULO_IZQUIERDA, HERRATICO};
-class CPlataforma : public CSprite
+class CPlataforma : public tr::CSprite
 {
 public:
 	CPlataforma(int _direccionHuecoMovil = 0);

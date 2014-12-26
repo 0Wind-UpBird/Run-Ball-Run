@@ -1,25 +1,25 @@
 #include <Escenario.h>
 
-CEscenario::CEscenario(){}
+tr::CEscenario::CEscenario(){}
 
-CEscenario::~CEscenario(){}
+tr::CEscenario::~CEscenario(){}
 
-bool CEscenario::isEndEscena(sf::Event)
+bool tr::CEscenario::isEndEscena(sf::Event)
 { 
 	return true; 
 }
 
-std::string CEscenario::getKeyOfNextEscena()
+std::string tr::CEscenario::getKeyOfNextEscena()
 {
 	return this->key;
 }
 
-char* CEscenario::getKey()
+char* tr::CEscenario::getKey()
 {
 	return this->key;
 }
 
-void CEscenario::updateEventSprites(sf::Event evento)
+void tr::CEscenario::updateEventSprites(sf::Event evento)
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -29,7 +29,7 @@ void CEscenario::updateEventSprites(sf::Event evento)
 }
 
 
-void CEscenario::updateAfterSprites()
+void tr::CEscenario::updateAfterSprites()
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -38,7 +38,7 @@ void CEscenario::updateAfterSprites()
 	}
 }
 
-void CEscenario::updateBeforeSprites()
+void tr::CEscenario::updateBeforeSprites()
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -47,13 +47,13 @@ void CEscenario::updateBeforeSprites()
 	}
 }
 
-void CEscenario::addSprite(CSprite* newSprite)
+void tr::CEscenario::addSprite(CSprite* newSprite)
 {
 	this->sprites.push_back(newSprite);
 	this->ordenarSprites();
 }
 
-void CEscenario::deleteSprite(const char* key)
+void tr::CEscenario::deleteSprite(const char* key)
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -66,12 +66,12 @@ void CEscenario::deleteSprite(const char* key)
 	}
 }
 
-void CEscenario::clearSprites()
+void tr::CEscenario::clearSprites()
 {
 	this->sprites.clear();
 }
 
-void CEscenario::drawSprites()
+void tr::CEscenario::drawSprites()
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -80,7 +80,7 @@ void CEscenario::drawSprites()
 	}
 }
 
-CSprite* CEscenario::getSprite(const char *key)
+tr::CSprite* tr::CEscenario::getSprite(const char *key)
 {
 	int i = 0;
 	for (int i = 0; i < int(this->sprites.size()); i++)
@@ -93,7 +93,7 @@ CSprite* CEscenario::getSprite(const char *key)
 	return nullptr;
 }
 
-void CEscenario::ordenarSprites()
+void tr::CEscenario::ordenarSprites()
 {
 	std::sort(this->sprites.begin(), this->sprites.end(), 
 		[](const CSprite *_dataA,const CSprite *_dataB) -> bool 

@@ -1,51 +1,51 @@
 #include <Sprite.h>
 
-CSprite::CSprite()
+tr::CSprite::CSprite()
 {
 	this->zindex = 0;
 }
 
-CSprite::~CSprite()
+tr::CSprite::~CSprite()
 {
 
 }
 
-char* CSprite::getKey() const
+char* tr::CSprite::getKey() const
 {
 	return key;
 }
 
-float CSprite::getZIndex() const
+float tr::CSprite::getZIndex() const
 {
 	return this->zindex;
 }
 
-void CSprite::draw()
+void tr::CSprite::draw()
 {
 
 }
 
-void CSprite::initDraw()
+void tr::CSprite::initDraw()
 {
 
 }
 
-void CSprite::updateEvent(sf::Event)
+void tr::CSprite::updateEvent(sf::Event)
 {
 
 }
 
-void CSprite::updateBeforeEvent()
+void tr::CSprite::updateBeforeEvent()
 {
 
 }
 
-void CSprite::updateAfterEvent()
+void tr::CSprite::updateAfterEvent()
 {
 
 }
 
-bool CSprite::hayColision(sf::Transformable *obj1, sf::Transformable *obj2)
+bool tr::CSprite::hayColision(sf::Transformable *obj1, sf::Transformable *obj2)
 {
 	if (obj1->getPosition().x >= obj2->getPosition().x && 
 		obj1->getPosition().x <= obj2->getPosition().x + obj2->getScale().x &&

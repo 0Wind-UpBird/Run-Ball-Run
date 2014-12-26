@@ -1,13 +1,13 @@
 #include <Cordinador.h>
 
-std::vector<CEscenario* > CCordinador::escenarios;
+std::vector<tr::CEscenario* > tr::CCordinador::escenarios;
 
-CEscenario* CCordinador::getEscenario()
+tr::CEscenario* tr::CCordinador::getEscenario()
 {
 	return escenarioActual;
 }
 
-CEscenario* CCordinador::getAEscenario(const char*key)
+tr::CEscenario* tr::CCordinador::getAEscenario(const char*key)
 {
 	for (int i = 0; i < int(CCordinador::escenarios.size()); i++)
 	{
@@ -20,13 +20,13 @@ CEscenario* CCordinador::getAEscenario(const char*key)
 }
 
 
-void CCordinador::addEscenario(CEscenario* newEscenario)
+void tr::CCordinador::addEscenario(CEscenario* newEscenario)
 {
 	this->escenarios.push_back(newEscenario);
 	this->escenarioActual = newEscenario;
 }
 
-void CCordinador::deleteEscenario(const char* key)
+void tr::CCordinador::deleteEscenario(const char* key)
 {
 	int i = 0;
 	for (int i = 0; i < int(this->escenarios.size()); i++)
@@ -39,12 +39,12 @@ void CCordinador::deleteEscenario(const char* key)
 	}
 }
 
-void CCordinador::clearEscenarios()
+void tr::CCordinador::clearEscenarios()
 {
 	this->escenarios.clear();
 }
 
-void CCordinador::setEscenarioActual(const char* key)
+void tr::CCordinador::setEscenarioActual(const char* key)
 {
 	for (int i = 0; i < int(this->escenarios.size()); i++)
 	{
@@ -55,12 +55,12 @@ void CCordinador::setEscenarioActual(const char* key)
 	}	
 }
 
-void CCordinador::nextEscenario(const char*key)
+void tr::CCordinador::nextEscenario(const char*key)
 {
 	this->setEscenarioActual(key);
 }
 
-void CCordinador::nextEscenario(std::string &key)
+void tr::CCordinador::nextEscenario(std::string &key)
 {
 	this->setEscenarioActual(key.c_str());
 }

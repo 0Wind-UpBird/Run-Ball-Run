@@ -1,6 +1,6 @@
 #include <fpsView.h>
 
-CFpsView::CFpsView()
+tr::CFpsView::CFpsView()
 {
 	this->fuente.loadFromFile("font/arial.ttf");
 	this->texto.setFont(this->fuente);
@@ -8,12 +8,12 @@ CFpsView::CFpsView()
 	this->texto.setColor(sf::Color::Black);
 }
 
-void CFpsView::draw()
+void tr::CFpsView::draw()
 {
 	CApp::window->draw(this->texto);
 }
 
-void CFpsView::update(sf::Event evento)
+void tr::CFpsView::update(sf::Event evento)
 {
 	this->texto.setString("FPS: " + std::to_string(CApp::fps));
 }

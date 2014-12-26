@@ -9,7 +9,7 @@
 enum class EOpcion {JugarSolo, Unirce, Configuracion, Salir};
 
 #define SPRITE_ITEM_MENU "SPRITE_ITEM_MENU"
-class CItemsMenu : public CSprite
+class CItemsMenu : public tr::CSprite
 {
 public:
 	CItemsMenu();

@@ -1,19 +1,19 @@
 #include <App.h>
 
-sf::RenderWindow* CApp::window;
-float CApp::fps;
-int CApp::W_SCREEN = 400;
-int CApp::H_SCREEN = 600;
-sf::Time CApp::currentTimeInLoop;
+sf::RenderWindow* tr::CApp::window;
+float tr::CApp::fps;
+int tr::CApp::W_SCREEN = 400;
+int tr::CApp::H_SCREEN = 600;
+sf::Time tr::CApp::currentTimeInLoop;
 
-CApp::CApp(sf::RenderWindow* _window)
+tr::CApp::CApp(sf::RenderWindow* _window)
 {
 	this->window = _window;
 	this->window->setFramerateLimit(60);
 }
 
 
-void CApp::loopGame()
+void tr::CApp::loopGame()
 {	
 
 	while ((*window).isOpen())
@@ -30,7 +30,7 @@ void CApp::loopGame()
 }
 
 
-void CApp::catchEvent()
+void tr::CApp::catchEvent()
 {
 	sf::Event evento;
 	this->updateBeforeEvent();
@@ -42,17 +42,17 @@ void CApp::catchEvent()
 }
 
 				
-void CApp::updateAfterEvent()
+void tr::CApp::updateAfterEvent()
 {
 	this->cordinador->getEscenario()->updateAfterSprites();
 }
 
-void CApp::updateBeforeEvent()
+void tr::CApp::updateBeforeEvent()
 {
 	this->cordinador->getEscenario()->updateBeforeSprites();
 }
 
-void CApp::updateEvent(sf::Event evento)
+void tr::CApp::updateEvent(sf::Event evento)
 {
 	if (evento.type == sf::Event::Closed)
 	{
@@ -75,17 +75,17 @@ void CApp::updateEvent(sf::Event evento)
 	this->cordinador->getEscenario()->updateEventSprites(evento);
 }
 
-void CApp::clearScreen()
+void tr::CApp::clearScreen()
 {
 	this->window->clear(sf::Color::Blue);
 }
 
-void CApp::draw()
+void tr::CApp::draw()
 {
 	this->cordinador->getEscenario()->drawSprites();
 }
 
-void CApp::displayWindows()
+void tr::CApp::displayWindows()
 {
 	this->window->display();
 }

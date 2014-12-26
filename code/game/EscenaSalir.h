@@ -8,7 +8,7 @@
 #include <Escenario.h>
 
 #define ESCENA_SALIR "ESCENA_SALIR"
-class CEscenaSalir : public CEscenario
+class CEscenaSalir : public tr::CEscenario
 {
 public:
 	CEscenaSalir();

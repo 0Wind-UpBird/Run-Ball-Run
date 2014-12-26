@@ -12,7 +12,7 @@
 
 
 #define ESCENA_MENU_PRINCIPAL "ESCENA_MENU_PRINCIPAL"
-class CEscenarioMenuPrincipal : public CEscenario
+class CEscenarioMenuPrincipal : public tr::CEscenario
 {
 public:
 	CEscenarioMenuPrincipal();

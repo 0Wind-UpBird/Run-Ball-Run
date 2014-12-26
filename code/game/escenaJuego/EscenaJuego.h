@@ -8,7 +8,7 @@
 #include <Escenario.h>
 
 #define ESCENA_JUEGO "ESCENA_JUEGO"
-class CEscenaJuego : public CEscenario
+class CEscenaJuego : public tr::CEscenario
 {
 public:
 	CEscenaJuego(void);

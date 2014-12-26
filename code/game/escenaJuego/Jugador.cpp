@@ -11,8 +11,8 @@ CBounce::CBounce() :
 	this->pelota.setOutlineColor(sf::Color::Black);
 	this->pelota.setOutlineThickness(1);
 	this->pelota.setPosition(100, 200);	
-	this->limitX = CApp::W_SCREEN;
-	this->limitY = CApp::H_SCREEN;
+	this->limitX = tr::CApp::W_SCREEN;
+	this->limitY = tr::CApp::H_SCREEN;
 	this->continueMoveToLeft = this->continueMoveToRigth = false;	
 }
 
@@ -57,7 +57,7 @@ void CBounce::updateEvent(sf::Event evento)
 
 void CBounce::draw()
 {
-	CApp::window->draw(this->pelota);
+	tr::CApp::window->draw(this->pelota);
 	this->clock.restart();
 }
 void CBounce::initDraw()

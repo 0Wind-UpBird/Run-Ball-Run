@@ -9,7 +9,7 @@
 #include "Plataforma.h"
 
 #define SPRITE_PLATAFORMAS "SPRITE_PLATAFORMAS"
-class CPlataformas : public CSprite
+class CPlataformas : public tr::CSprite
 {
 public:
 	CPlataformas();

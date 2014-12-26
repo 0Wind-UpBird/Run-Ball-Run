@@ -6,34 +6,34 @@
 #include <algorithm>
 
 #include <Sprite.h>
+namespace tr{
 
-class CEscenario
-{
-public:
-	CEscenario();
-	~CEscenario();
+	class CEscenario
+	{
+	public:
+		CEscenario();
+		~CEscenario();
 
-	void addSprite(CSprite*);
-	void clearSprites();
-	void deleteSprite(const char* key);
-	void ordenarSprites();
+		void addSprite(CSprite*);
+		void clearSprites();
+		void deleteSprite(const char* key);
+		void ordenarSprites();
 
-	virtual bool isEndEscena(sf::Event);
-	virtual std::string getKeyOfNextEscena();
+		virtual bool isEndEscena(sf::Event);
+		virtual std::string getKeyOfNextEscena();
 
-	void updateEventSprites(sf::Event);
-	void updateBeforeSprites();
-	void updateAfterSprites();
-	
-	void drawSprites();
+		void updateEventSprites(sf::Event);
+		void updateBeforeSprites();
+		void updateAfterSprites();
 
-	char* getKey();
+		void drawSprites();
 
-	CSprite* getSprite(const char *key);
-protected:
-	std::vector<CSprite*> sprites;
-	char* key;
-};
+		char* getKey();
 
-
+		CSprite* getSprite(const char *key);
+	protected:
+		std::vector<CSprite*> sprites;
+		char* key;
+	};
+}
 #endif

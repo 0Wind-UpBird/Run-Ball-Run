@@ -13,7 +13,7 @@ const int STEP_UPDATE_BEFORE = 2;
 const int STEP_UPDATE_AFTER = 3;
 
 #define SPRITE_BOUNCE "SPRITE_BOUNCE"
-class CBounce : public CSprite
+class CBounce : public tr::CSprite
 {
 public:
 	CBounce();

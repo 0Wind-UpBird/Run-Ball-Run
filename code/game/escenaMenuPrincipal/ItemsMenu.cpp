@@ -64,19 +64,19 @@ void CItemsMenu::draw()
 {
 	this->texto.setString("Jugar Solo");
 	this->texto.setPosition(100, 100);
-	CApp::window->draw(this->texto);
+	tr::CApp::window->draw(this->texto);
 
 	this->texto.setString("Unirce a servidor");
 	this->texto.setPosition(100, 150);
-	CApp::window->draw(this->texto);
+	tr::CApp::window->draw(this->texto);
 
 	this->texto.setString("Opciones");
 	this->texto.setPosition(100, 200);
-	CApp::window->draw(this->texto);
+	tr::CApp::window->draw(this->texto);
 
 	this->texto.setString("Salir");
 	this->texto.setPosition(100, 250);
-	CApp::window->draw(this->texto);
+	tr::CApp::window->draw(this->texto);
 
-	CApp::window->draw(*this->selector);	
+	tr::CApp::window->draw(*this->selector);	
 }
