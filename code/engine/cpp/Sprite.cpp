@@ -44,17 +44,3 @@ void tr::CSprite::updateAfterEvent()
 {
 
 }
-
-bool tr::CSprite::hayColision(sf::Transformable *obj1, sf::Transformable *obj2)
-{
-	if (obj1->getPosition().x >= obj2->getPosition().x && 
-		obj1->getPosition().x <= obj2->getPosition().x + obj2->getScale().x &&
-		obj1->getPosition().y >= obj2->getPosition().y &&
-		obj1->getPosition().y <= obj2->getPosition().y + obj2->getScale().y)
-	{
-		return true;
-	}else
-	{
-		return false;
-	}
-}

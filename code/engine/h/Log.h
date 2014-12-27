@@ -1,20 +1,28 @@
 #ifndef Log_h
 #define Log_h
 
-//falta comparar que si es debug, incluya la iostram, si es realease, use archivos
+//Macro creada por el proprocesador en las configuracion del proyecto en VS
+/*
+#ifdef Debug
+	
+	
+#else
+	#define ONLY_ON_DEBUG 0
+#endif
+	*/
+#define ONLY_ON_DEBUG 1
 #include <iostream>
 
 namespace tr
 {
-	static class CLog
+	class CLog
 	{
 	public:
 		CLog();
 		~CLog();
 
-		static void logOutput(const char *);
-
-	private:
+		//ejemplo tr::CLog::logOutput(__FILE__, __LINE__, __FUNCTION__, "mesanje", ONLY_ON_DEBUG);
+		static void logOutput(const char* , int , const char* , const char* , int );
 
 	};
 }

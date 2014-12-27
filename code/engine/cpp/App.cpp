@@ -5,6 +5,7 @@ float tr::CApp::fps;
 int tr::CApp::W_SCREEN = 400;
 int tr::CApp::H_SCREEN = 600;
 sf::Time tr::CApp::currentTimeInLoop;
+tr::CCordinador* tr::CApp::cordinador;
 
 tr::CApp::CApp(sf::RenderWindow* _window)
 {
@@ -15,7 +16,6 @@ tr::CApp::CApp(sf::RenderWindow* _window)
 
 void tr::CApp::loopGame()
 {	
-
 	while ((*window).isOpen())
 	{
 		this->clock.restart();		
@@ -77,7 +77,7 @@ void tr::CApp::updateEvent(sf::Event evento)
 
 void tr::CApp::clearScreen()
 {
-	this->window->clear(sf::Color::Blue);
+	this->window->clear(sf::Color(104, 151, 155));
 }
 
 void tr::CApp::draw()
@@ -88,4 +88,9 @@ void tr::CApp::draw()
 void tr::CApp::displayWindows()
 {
 	this->window->display();
+}
+
+tr::CCordinador* tr::CApp::getCordinador()
+{
+	return CApp::cordinador;
 }

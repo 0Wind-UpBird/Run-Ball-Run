@@ -2,12 +2,12 @@
 #define App_h
 #include <SFML\Graphics.hpp>
 
+#include <Log.h>
+
 #include <Cordinador.h>
 
 namespace tr
 {
-
-
 	class CApp
 	{
 	public:
@@ -33,8 +33,9 @@ namespace tr
 		static sf::Time currentTimeInLoop;
 
 		void setCordinador(CCordinador *c) { this->cordinador = c; }
+		static tr::CCordinador* getCordinador();
 	private:	
-		CCordinador *cordinador;
+		static tr::CCordinador *cordinador;
 		sf::Clock clock;
 	};
 }

@@ -2,12 +2,12 @@
 #define Sprite_h
 #include <SFML\Graphics.hpp>
 
+#include <Colisiometro.h>
+#include <Chocante.h>
+
 namespace tr
 {
-
-
-
-	class CSprite
+	class CSprite : protected CChocante
 	{
 	public:
 		CSprite();
@@ -20,17 +20,13 @@ namespace tr
 		virtual void draw();
 		virtual void initDraw();	
 
+		void huboChoque(CChoqueInfo inf);
 		float getZIndex() const;
-		char* getKey() const;	
-
-		static bool hayColision(sf::Transformable *obj1, sf::Transformable *obj2);
+		char* getKey() const;
 	protected:
+
 		char* key;
-		sf::Sprite sprite;
-		sf::Texture textura;
-
 		sf::Clock clock;
-
 		float zindex;
 	};
 }
