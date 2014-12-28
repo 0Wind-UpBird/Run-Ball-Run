@@ -20,7 +20,7 @@ namespace tr
 		virtual void draw();
 		virtual void initDraw();	
 
-		void huboChoque(CChoqueInfo inf);
+		virtual void huboChoque(CChoqueInfo inf);
 		float getZIndex() const;
 		char* getKey() const;
 	protected:

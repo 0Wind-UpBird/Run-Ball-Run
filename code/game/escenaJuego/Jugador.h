@@ -27,11 +27,16 @@ public:
 	void initDraw();
 
 	void movePelota(int key);
-	bool chocaConPlataforma(sf::Transformable plataforma, sf::Transformable hueco);
+	
+	bool chocaConPlataforma();
+	void huboChoque(tr::CChoqueInfo);
+
+	void PelotaCae();
 
 private:
 	sf::CircleShape pelota;
 	float pixelForSec;
+	float velocidadDeCaida; //dado en pixel por segundos
 
 	bool continueMoveToLeft;
 	bool continueMoveToRigth;

@@ -6,7 +6,7 @@
 #include <App.h>
 
 enum class tipoHueco {QUIETO, DERECHA_CONTINUO, IZQUIERDA_CONTINUO, PENDULO_DERECHA, PENDULO_IZQUIERDA, HERRATICO};
-class CPlataforma : public tr::CSprite
+class CPlataforma
 {
 public:
 	CPlataforma(int _direccionHuecoMovil = 0);
@@ -22,8 +22,8 @@ public:
 	sf::Vector2f getHuecoPostion();
 	sf::Vector2f getPlataformaPosition();
 
-	sf::Transformable getHueco();
-	sf::Transformable getPlataforma();
+	sf::RectangleShape* getHueco();
+	sf::RectangleShape* getPlataforma();
 
 	void draw();
 	void initDraw();
@@ -38,6 +38,10 @@ private:
 
 	//0 quieto; < 0 izq; > 0 der
 	int direccionHuecoMovil;
+
+	char* key;
+	sf::Clock clock;
+	float zindex;
 };
 
 #endif

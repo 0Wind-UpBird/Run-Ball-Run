@@ -10,6 +10,11 @@ tr::CSprite::~CSprite()
 
 }
 
+void tr::CSprite::huboChoque(tr::CChoqueInfo)
+{
+
+}
+
 char* tr::CSprite::getKey() const
 {
 	return key;

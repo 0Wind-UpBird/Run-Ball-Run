@@ -58,9 +58,16 @@ bool tr::CColisiometro::Interseccion(sf::RectangleShape rectangle, sf::CircleSha
 {	
 	sf::FloatRect rect2 = rectangle.getGlobalBounds();
 	sf::FloatRect rect1 = circle.getGlobalBounds();
+	sf::FloatRect intersection;
 
-	if (rect2.intersects(rect1))
+	if (rect2.intersects(rect1, intersection))
 	{
+		if (choque != nullptr)
+		{
+			//le regreso la zona del choque			
+			choque->setPosition(sf::Vector2f(intersection.left, intersection.top));
+			choque->setSize(sf::Vector2f(intersection.width,intersection.height));			
+		}
 		return true;
 	}else
 	{

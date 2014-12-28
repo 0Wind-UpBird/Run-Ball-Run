@@ -33,7 +33,7 @@ namespace tr
 		void addNewRectanglesShapes(std::vector<sf::RectangleShape*>);
 		void clearRectanglesShapes();
 
-		void huboChoque(CChoqueInfo inf);
+		virtual void huboChoque(CChoqueInfo);
 
 		void setIdChocador(std::string id);
 		std::string getIdChocador();

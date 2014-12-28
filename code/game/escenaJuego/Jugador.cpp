@@ -2,9 +2,12 @@
 
 CBounce::CBounce() : 
 	pelota(25.0f),
-	pixelForSec(800.0f)
+	pixelForSec(800.0f),
+	velocidadDeCaida(1000.0f)
 {
 	this->key = "Bounce";
+	this->setIdChocador(this->key);
+
 	this->zindex = 5.01f;
 
 	this->pelota.setFillColor(sf::Color::Cyan);
@@ -13,14 +16,15 @@ CBounce::CBounce() :
 	this->pelota.setPosition(100, 200);	
 	this->limitX = tr::CApp::W_SCREEN;
 	this->limitY = tr::CApp::H_SCREEN;
-	this->continueMoveToLeft = this->continueMoveToRigth = false;	
+	this->continueMoveToLeft = this->continueMoveToRigth = false;
+
+	this->addNewCirclesShapes(&this->pelota);	
 }
 
 CBounce::~CBounce()
 {
 
 }
-
 
 void CBounce::updateAfterEvent()
 {		
@@ -43,6 +47,11 @@ void CBounce::updateAfterEvent()
 void CBounce::updateBeforeEvent()
 {
 	this->stepOfEvent = STEP_UPDATE_BEFORE;	
+
+	if (!this->chocaConPlataforma())
+	{
+		this->PelotaCae();
+	}
 }
 
 void CBounce::updateEvent(sf::Event evento)
@@ -99,17 +108,38 @@ void CBounce::movePelota(int key)
 		this->pelota.move(pixelMov,0);
 		break;
 
-	default:		
+	default:
 		this->continueMoveToLeft = this->continueMoveToRigth = false;		
 		break;
 	}
 }
 
-bool CBounce::chocaConPlataforma(sf::Transformable plataforma, sf::Transformable hueco)
+bool CBounce::chocaConPlataforma()
 {
-	if(this->pelota.getPosition().y == plataforma.getPosition().y)
+	CChocante* plataforma = tr::CApp::getCordinador()->getEscenario()->getSprite("SPRITE_PLATAFORMAS");
+	return tr::CColisiometro::chocar_Rectangulo_Circulo(*plataforma, (CChocante)*this, (CChocante*)this);
+}
+
+void CBounce::PelotaCae()
+{
+	float pixelToMove = this->clock.getElapsedTime().asSeconds() * this->velocidadDeCaida;
+	
+	if(this->pelota.getPosition().y + this->pelota.getGlobalBounds().height + pixelToMove >= this->limitY)
 	{
-		return true;
+		pixelToMove = this->limitY - (this->pelota.getPosition().y + this->pelota.getGlobalBounds().height);
 	}
-	return false;
+
+	this->pelota.move(0, pixelToMove);
+}
+
+
+void CBounce::huboChoque(tr::CChoqueInfo inf)
+{
+	if (inf.idChocador_1 == "SPRITE_PLATAFORMAS")
+	{
+		float posX = this->pelota.getPosition().x;
+		float choqueInY = inf.choque[0].getGlobalBounds().top;
+		float moveY = std::abs(choqueInY - (this->pelota.getLocalBounds().height + this->pelota.getPosition().y));
+		this->pelota.move(0, -moveY);
+	}
 }

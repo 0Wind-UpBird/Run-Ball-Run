@@ -15,7 +15,7 @@ CPlataforma::CPlataforma(int _direccionHuecoMovil) :
 	this->hueco.setPosition(0, (float)tr::CApp::H_SCREEN);
 	this->hueco.setFillColor(sf::Color::White);
 
-	this->key = "plataforma";
+	this->key = "plataforma";	
 	this->zindex = 5.0f;
 }
 
@@ -31,11 +31,6 @@ void CPlataforma::updateEvent(sf::Event)
 
 void CPlataforma::updateAfterEvent()
 {
-
-}
-
-void CPlataforma::updateBeforeEvent()
-{
 	if (this->plataforma.getPosition().y <= 0)
 	{
 		this->movePlataformaY((float)tr::CApp::H_SCREEN);
@@ -46,6 +41,11 @@ void CPlataforma::updateBeforeEvent()
 
 		this->movePlataformaY(-moveY);
 	}
+}
+
+void CPlataforma::updateBeforeEvent()
+{
+	
 }
 
 void CPlataforma::draw()
@@ -80,13 +80,13 @@ sf::Vector2f CPlataforma::getPlataformaPosition()
 	return this->plataforma.getPosition();
 }
 
-sf::Transformable CPlataforma::getHueco()
+sf::RectangleShape* CPlataforma::getHueco()
 {
-	return this->hueco;
+	return &this->hueco;
 }
 
 
-sf::Transformable CPlataforma::getPlataforma()
+sf::RectangleShape* CPlataforma::getPlataforma()
 {
-	return this->plataforma;
+	return &this->plataforma;
 }
